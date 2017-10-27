@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "Welcome!"
+    return "Pourbaix diagrams view app"
 
 @app.route("/apps/pourbaix")
 def pourbaix_generation():
@@ -27,9 +27,7 @@ def pourbaix_generation():
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
     d, names, text = pb.diagram(U, pH, plot=True)
-    #print(names)                                    ##ASE considers single metal system which 
-                                                    #may be oversimplified in binary systems
-    #print(type(pb.diagram(U, pH, plot=True)))
+   
     return d, name, text;
 
 if __name__== "__pourbaix_generation__":
