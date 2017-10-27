@@ -30,7 +30,7 @@ def pourbaix_generation():
     #print(type(pb.diagram(U, pH, plot=True)))
     return d, name, text;
 
-if __name__== "__main__":
+if __name__== "__pourbaix_generation__":
     app.run()
     
     
