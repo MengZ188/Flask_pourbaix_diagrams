@@ -2,7 +2,7 @@
 
 ##first to do a very basic tutorial##
 import numpy as np
-import poubaix_plot
+from pourbaix_plot import solvated,Pourbaix
 
 from flask import Flask
 app = Flask(__name__)
@@ -12,8 +12,8 @@ def main():
     return "Welcome!"
 def pourbaix_generation():
     
-    refs = pourbaix_plot.solvated('Zn')   
-    refs1 = pourbaix_plot.solvated('Cu')
+    refs = solvated('Zn')   
+    refs1 = solvated('Cu')
     # print(refs)
     # print(refs1)
     # create a list contains all alloys or solids
@@ -21,7 +21,7 @@ def pourbaix_generation():
     #add solid and aqueous neutral species
     refs += refs1 ##can we get reference energies from somewhere else?
     #print(refs)
-    pb = pourbaix_plot.Pourbaix(refs, Zn=1, Cu = 1, O =1) ##if it can be adjusted as elem0= 1, elem1 = 1, O = 1??
+    pb = Pourbaix(refs, Zn=1, Cu = 1, O =1) ##if it can be adjusted as elem0= 1, elem1 = 1, O = 1??
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
     d, names, text = pb.diagram(U, pH, plot=True)
