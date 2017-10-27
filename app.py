@@ -10,6 +10,8 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     return "Welcome!"
+
+@app.route("/apps/pourbaix")
 def pourbaix_generation():
     
     refs = solvated('Zn')   
