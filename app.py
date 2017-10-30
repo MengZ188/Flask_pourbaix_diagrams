@@ -27,6 +27,8 @@ def pourbaix_generation():
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
     d, names, text = pb.diagram(U, pH, plot=True)
+    import mpld3
+    mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
    
     return d, name, text;
 
