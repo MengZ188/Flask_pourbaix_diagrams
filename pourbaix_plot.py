@@ -294,9 +294,9 @@ class Pourbaix:
             ax.set_ylim(min(U), max(U))
             if show:
                   fig_1 = plt.gcf()
-                  fig_1.savefig("/Users/mengzhao/Desktop/fig_1", dpi = 300)
-                  import mpld3
-                  mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
+#                   fig_1.savefig("/Users/mengzhao/Desktop/fig_1", dpi = 300)
+#                   import mpld3
+#                   mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
 
         return a, compositions, text
 
