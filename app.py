@@ -26,11 +26,12 @@ def pourbaix_generation():
     pb = Pourbaix(refs, Zn=1, Cu = 1, O =1) ##if it can be adjusted as elem0= 1, elem1 = 1, O = 1??
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
-    d, names, text = pb.diagram(U, pH, plot=True)
+#     d, names, text = 
+    pb.diagram(U, pH, plot=True)
 #     import mpld3
 #     mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return d, names, text;
+    return fig_1
 
 if __name__== "__main__":
     app.run()
