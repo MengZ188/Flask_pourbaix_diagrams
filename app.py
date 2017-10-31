@@ -32,7 +32,7 @@ def pourbaix_generation():
    
     return d, name, text;
 
-if __name__== "__pourbaix_generation__":
+if __name__== "__main__":
     app.run()
     
       
