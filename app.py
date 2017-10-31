@@ -30,7 +30,7 @@ def pourbaix_generation():
 #     import mpld3
 #     mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return d, name, text;
+    return d, names, text;
 
 if __name__== "__main__":
     app.run()
