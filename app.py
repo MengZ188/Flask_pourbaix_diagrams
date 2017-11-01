@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 
 ##flask app for pourbaix diagrams generation##
+import StringIO
 
 import numpy as np
-from pourbaix_plot import solvated,Pourbaix
+import matplotlib.pyplot as plt
+from pourbaix_plot import solvated, Pourbaix
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, make_response #render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -26,13 +29,18 @@ def pourbaix_generation():
 #   d, names, text = 
     pb.diagram(U, pH, plot=True)
     
-    import matplotlib.pyplot as plt
     fig1 = plt.gcf()
-    import mpld3
-    fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
+    canvas = FigureCanvas(fig1)
+    output = StringIO.StringIO()
+    canvas.point_png(output)
+    response = make_response(output.getvalue())
+    response.mimetype = 'image/png'
+    return response
+#     import mpld3
+#     fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
    
-#     return jsonify(fig1_json)
-    return render_template('template.html')
+# #     return jsonify(fig1_json)
+#     return render_template('template.html')
 
 
 if __name__== "__main__":
