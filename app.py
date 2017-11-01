@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 ##flask app for pourbaix diagrams generation##
+##Reflect PNG file on Web, it is a static figure##
 import StringIO
 
 import numpy as np
