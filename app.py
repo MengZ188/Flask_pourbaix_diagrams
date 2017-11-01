@@ -35,5 +35,6 @@ def pourbaix_generation():
 
 if __name__== "__main__":
     app.run()
+    app.debug()
     
       
