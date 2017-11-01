@@ -32,7 +32,7 @@ def pourbaix_generation():
     fig1 = plt.gcf()
     canvas = FigureCanvas(fig1)
     output = StringIO.StringIO()
-    canvas.point_png(output)
+    canvas.print_png(output)
     response = make_response(output.getvalue())
     response.mimetype = 'image/png'
     return response
