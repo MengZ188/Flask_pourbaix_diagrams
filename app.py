@@ -27,9 +27,9 @@ def pourbaix_generation():
     pb.diagram(U, pH, plot=True)
     
     import matplotlib.pyplot as plt
-    fig_1 = plt.gcf()
+    fig1 = plt.gcf()
     import mpld3
-    fig1_json = mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
+    fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
    
     return jsonify(fig1_json)
 
