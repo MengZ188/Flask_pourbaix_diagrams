@@ -5,7 +5,7 @@
 import numpy as np
 from pourbaix_plot import solvated,Pourbaix
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -31,7 +31,8 @@ def pourbaix_generation():
     import mpld3
     fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return jsonify(fig1_json)
+#     return jsonify(fig1_json)
+    return render_template('template.html')
 
 
 if __name__== "__main__":
