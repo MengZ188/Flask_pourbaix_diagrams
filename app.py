@@ -24,14 +24,14 @@ def pourbaix_generation():
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
 #   d, names, text = 
-    d, names, text= pb.diagram(U, pH, plot=True)
+    pb.diagram(U, pH, plot=True)
     
-#     import matplotlib.pyplot as plt
-#     fig_1 = plt.gcf()
+    import matplotlib.pyplot as plt
+    fig_1 = plt.gcf()
 # #     import mpld3
 # #     mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return jsonify(d, names, text)
+    return jsonify(fig_1)
 
 if __name__== "__main__":
     app.run()
