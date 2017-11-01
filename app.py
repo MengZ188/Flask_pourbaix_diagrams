@@ -1,6 +1,7 @@
+#!/usr/bin/env python
+
 ##flask app for pourbaix diagrams generation##
 
-##first to do a very basic tutorial##
 import numpy as np
 from pourbaix_plot import solvated,Pourbaix
 
@@ -8,7 +9,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def main():
+def index():
     return "Pourbaix diagrams view app"
 
 @app.route("/apps/pourbaix")
