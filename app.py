@@ -28,10 +28,10 @@ def pourbaix_generation():
     
     import matplotlib.pyplot as plt
     fig_1 = plt.gcf()
-# #     import mpld3
-# #     mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
+    import mpld3
+    fig1_json = mpld3.save_json(fig_1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return jsonify(fig_1)
+    return jsonify(fig1_json)
 
 if __name__== "__main__":
     app.run()
