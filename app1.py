@@ -37,8 +37,7 @@ def pourbaix_generation():
 #     response.mimetype = 'image/png'
 #     return response
     import mpld3
-    #fig1_json = 
-    mpld3.save_json(fig1,"fig1_json")
+    fig1_json = mpld3.save_json(fig1,"fig1_json")
    
     return jsonify(fig1_json)
 #     return render_template('template.html')
