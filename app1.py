@@ -30,16 +30,17 @@ def pourbaix_generation():
     pb.diagram(U, pH, plot=True)
     
     fig1 = plt.gcf()
-    canvas = FigureCanvas(fig1)
-    output = StringIO.StringIO()
-    canvas.print_png(output)
-    response = make_response(output.getvalue())
-    response.mimetype = 'image/png'
-    return response
-#     import mpld3
-#     fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
+#     canvas = FigureCanvas(fig1)
+#     output = StringIO.StringIO()
+#     canvas.print_png(output)
+#     response = make_response(output.getvalue())
+#     response.mimetype = 'image/png'
+#     return response
+    import mpld3
+    #fig1_json = 
+    mpld3.save_json(fig1,"fig1_json")
    
-# #     return jsonify(fig1_json)
+    return jsonify(fig1_json)
 #     return render_template('template.html')
 
 
