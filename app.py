@@ -31,7 +31,8 @@ def pourbaix_generation():
     import mpld3
     fig1_json = mpld3.save_json(fig1,"/Users/mengzhao/Desktop/fig1_json")
    
-    return jsonify(fig1_json)
+#     return jsonify(fig1_json)
+    return fig1_json
 
 if __name__== "__main__":
     app.run()
