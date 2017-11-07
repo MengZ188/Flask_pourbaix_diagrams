@@ -126,7 +126,7 @@ def print_results(results):
 
 
 class Pourbaix:
-    def __init__(self, references, formula=None, T=300.0, **kwargs):
+    def __init__(self, references, T, formula = None,**kwargs):
         """Pourbaix object.
 
         references: list of (name, energy) tuples
@@ -170,7 +170,7 @@ class Pourbaix:
             if symbol not in self.N:
                 self.N[symbol] = len(self.N)
 
-    def decompose(self, U, pH, verbose=True, concentration=1e-6):
+    def decompose(self, U, pH, concentration, verbose=True):
         """Decompose material.
 
         U: float
