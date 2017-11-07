@@ -19,6 +19,9 @@ def index():
 @app.route("/apps/pourbaix")
 def pourbaix_generation():
     
+    T = 300
+    concentration = 1e-6
+    
     refs = solvated('Zn')   
     refs1 = solvated('Cu')
     refs += [('Zn', 0.0), ('ZnO', -3.323), ('ZnO2(aq)', -2.921), ('Cu',0.0)] 
