@@ -30,7 +30,7 @@ def pourbaix_generation():
     refs += [('Zn', 0.0), ('ZnO', -3.323), ('ZnO2(aq)', -2.921), ('Cu',0.0)] 
     refs += refs1 
 
-    pb = Pourbaix(refs, Zn=1, Cu = 1, O =1) 
+    pb = Pourbaix(refs,T, Zn=1, Cu = 1, O =1) 
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
 #   d, names, text = 
