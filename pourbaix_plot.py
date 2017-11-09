@@ -306,7 +306,7 @@ class Pourbaix:
 
 
     def colorfunction(self, U, pH, colors):
-        coefs, energy = self.decompose(U, pH, verbose=False)
+        coefs, energy = self.decompose(U, pH, concentration, verbose=False)
         indices = tuple(sorted(np.where(abs(coefs) > 1e-7)[0]))
         color = colors.get(indices)
         if color is None:
