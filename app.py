@@ -27,6 +27,8 @@ def pourbaix_generation():
     
     refs = solvated('Zn')   
     refs1 = solvated('Cu')
+    ions_aq = refs + refs1
+    print(ions_aq)
     refs += [('Zn', 0.0), ('ZnO', -3.323), ('ZnO2(aq)', -2.921), ('Cu',0.0)] 
     refs += refs1 
 
