@@ -16,7 +16,7 @@ app = Flask(__name__)
 def index():
     return "Pourbaix diagrams view app"
 
-@app.route("/apps/pourbaix", methods = ['POST'])
+@app.route("/apps/pourbaix")#, methods = ['POST'])
 # def get_input():
 #     T = request.form
     
@@ -34,6 +34,8 @@ def pourbaix_generation():
     U = np.linspace(-2, 2, 200)
     pH = np.linspace(-2, 16, 300)
 #   d, names, text = 
+    ion_name = str(raw_input("ion for a new concentration:"))
+    concentration = input("its new concentration:")
     pb.diagram(U, pH, plot=True)
     
     fig1 = plt.gcf()
