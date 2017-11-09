@@ -9,14 +9,17 @@ import matplotlib.pyplot as plt
 from pourbaix_plot import solvated, Pourbaix
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from flask import Flask, jsonify, make_response #render_template
+from flask import Flask, jsonify, make_response,request #render_template
 app = Flask(__name__)
 
 @app.route("/")
 def index():
     return "Pourbaix diagrams view app"
 
-@app.route("/apps/pourbaix")
+@app.route("/apps/pourbaix", methods = ['POST'])
+# def get_input():
+#     T = request.form
+    
 def pourbaix_generation():
     
     T = 300
