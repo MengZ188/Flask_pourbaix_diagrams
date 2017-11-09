@@ -186,7 +186,7 @@ class Pourbaix:
         """
 
         alpha = np.log(10) * self.kT
-        entropy = -np.log(concentration) * self.kT
+#         entropy = -np.log(concentration) * self.kT
 
         # We want to minimize np.dot(energies, x) under the constraints:
         #
@@ -217,7 +217,11 @@ class Pourbaix:
             else:
                 bounds.append((0, 1))
                 if aq:
-                    energy -= entropy
+                   if name == ion_name:
+                       energy -= -np.log(concentration) * self.kT
+                   else:
+                        concentration = 1e-6
+                        energy -= -np.log(concentration) * self.kT
             if verbose:
                 print('{0:<5}{1:10}{2:10.3f}'.format(len(energies),
                                                      name, energy))
